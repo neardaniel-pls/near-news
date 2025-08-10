@@ -1,0 +1,4 @@
+https://www.privacidade.digital/rss
+https://www.schneier.com/blog/atom.xml
+https://www.eff.org/rss/updates.xml
+https://www.privacyinternational.org/rss.xml

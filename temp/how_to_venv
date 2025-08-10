@@ -1,0 +1,62 @@
+Excellent! Setting up a virtual environment for your Python project in Fedora with VS Code is a great way to keep your project dependencies isolated. Here’s a step-by-step guide to get you up and running.
+
+### 1. Create a Project Directory and Virtual Environment
+
+First, open your terminal and create a directory for your new project. Then, navigate into that directory and create a virtual environment using Python's built-in `venv` module.
+
+```bash
+# Create a directory for your project
+mkdir my_project
+cd my_project
+
+# Create a virtual environment named '.venv'
+python3 -m venv .venv
+```
+
+It's a common convention to name the virtual environment directory `.venv` as it keeps the project structure clean and is often automatically recognized by tools like VS Code.
+
+### 2. Activate the Virtual Environment
+
+To use the virtual environment, you need to activate it. This will modify your shell's environment to point to the Python interpreter and packages within your new virtual environment.
+
+```bash
+# Activate the virtual environment
+source .venv/bin/activate
+```
+
+You'll know the environment is active because your terminal prompt will change to show the name of the virtual environment, for example: `(.venv) [user@fedora my_project]$`.
+
+### 3. Open Your Project in VS Code
+
+Now, you can open your project folder in Visual Studio Code.
+
+```bash
+# Open the current directory in VS Code
+code .
+```
+
+### 4. Select the Python Interpreter in VS Code
+
+One of the great features of the official Python extension for VS Code is its ability to automatically detect and use Python environments.
+
+*   **Automatic Detection**: Upon opening the project, VS Code will likely prompt you with a notification asking if you want to use the interpreter in the newly created `.venv` directory. You should select "Yes".
+*   **Manual Selection**: If you don't see a prompt or if you need to change the interpreter, you can do so manually:
+    1.  Open the **Command Palette**: `Ctrl+Shift+P`
+    2.  Type `Python: Select Interpreter` and press Enter.
+    3.  A list of available interpreters will appear. Select the one that corresponds to your project's virtual environment (e.g., `./.venv/bin/python`).
+
+### 5. Verify the Environment in VS Code's Terminal
+
+To be sure you're using the correct environment within VS Code, open a new integrated terminal.
+
+*   Go to **Terminal > New Terminal** in the VS Code menu.
+*   By default, VS Code should automatically activate the selected environment in the new terminal session. You should see the `(.venv)` prefix in the terminal prompt within VS Code.
+
+Now, any packages you install using `pip` in this terminal will be installed into your project's isolated virtual environment, not your system's global Python installation.
+
+For example:
+```bash
+pip install numpy
+```
+
+This will install the NumPy package only within your `.venv` environment, keeping your projects and their dependencies neatly separated.

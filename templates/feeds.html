@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerir Feeds - Agregador de Notícias</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Gerir Feeds RSS</h1>
+        <nav>
+            <a href="{{ url_for('index') }}">Feed de Notícias</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="add-feed-form">
+            <h2>Adicionar Novo Feed</h2>
+            <form action="{{ url_for('gerir_feeds') }}" method="post">
+                <div class="form-group">
+                    <label for="url">URL do Feed:</label>
+                    <input type="url" id="url" name="url" required>
+                </div>
+                <div class="form-group">
+                    <label for="nome">Nome (Opcional):</label>
+                    <input type="text" id="nome" name="nome">
+                </div>
+                <button type="submit">Adicionar Feed</button>
+            </form>
+        </section>
+
+        <section class="feed-list">
+            <h2>Feeds Atuais</h2>
+            <ul>
+                {% for feed in feeds %}
+                <li>
+                    <span class="feed-name">{{ feed.nome or 'Sem nome' }}</span>
+                    <span class="feed-url">{{ feed.url }}</span>
+                    <form action="{{ url_for('apagar_feed', feed_id=feed.id) }}" method="post" style="display: inline;">
+                        <button type="submit" class="delete-btn">Apagar</button>
+                    </form>
+                </li>
+                {% else %}
+                <li>Nenhum feed encontrado. Adicione um para começar.</li>
+                {% endfor %}
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>Agregador de Notícias de Privacidade e Segurança</p>
+    </footer>
+</body>
+</html>
