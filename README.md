@@ -1,6 +1,6 @@
-# 📰 Agregador de Notícias sobre Privacidade – Projeto em Python
+# 📰 Near News - Privacy News Aggregator in Python
 
-Este é um projeto local que coleta automaticamente notícias de diversos feeds RSS sobre privacidade e segurança digital, exibindo-as em uma interface web leve, usando Python e Flask.
+This is a local project that automatically collects news from various RSS feeds about digital privacy and security, displaying them in a lightweight web interface using Python and Flask.
 
 ## ✅ Funcionalidades
 
@@ -21,8 +21,8 @@ Este é um projeto local que coleta automaticamente notícias de diversos feeds 
 
 1.  **Clone o repositório e navegue para a pasta:**
     ```bash
-    git clone https://github.com/seu-usuario/privacidade-news-aggregator.git
-    cd privacidade-news-aggregator
+    git clone https://github.com/your-username/near-news.git
+    cd near-news
     ```
 
 2.  **(Recomendado) Crie e ative um ambiente virtual:**
